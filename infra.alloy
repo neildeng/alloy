@@ -1,4 +1,4 @@
-declare "infra" {
+declare "add" {
     argument "a" {}
     argument "b" {}
 
