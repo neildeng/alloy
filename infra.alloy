@@ -6,20 +6,12 @@ declare "add" {
         value = argument.a.value + argument.b.value
     }
 
-    prometheus.exporter.blackbox "example" {
-      target {
-        name    = "grafana"
-        address = "http://grafana.com"
-        module  = "http_2xx"
-        labels = {
-          "env" = "dev",
-        }
-      }
+    prometheus.exporter.self "alloy" {
     }
 
     export "blackbox" {
       value = concat(
-        prometheus.exporter.blackbox.example.targets,
+        prometheus.exporter.self.alloy.targets,
       )
     }
 }
