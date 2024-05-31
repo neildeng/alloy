@@ -9,7 +9,7 @@ declare "add" {
     prometheus.exporter.self "alloy" {
     }
 
-    export "blackbox" {
+    export "alloy" {
       value = concat(
         prometheus.exporter.self.alloy.targets,
       )
